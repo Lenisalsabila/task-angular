@@ -28,15 +28,16 @@ export class BarangindukComponent implements OnInit {
     data.harga =this.formAdd.controls['harga'].value
     this.kirimData = data;
   }
-  amount(): number{
+  amount(): void{
     let jum =<Barang>{};
     jum.sku =this.formAdd.controls['sku'].value
     jum.qty =this.formAdd.controls['qty'].value
     jum.harga =this.formAdd.controls['harga'].value
-    jum.amount =this.formAdd.controls['amount'].value
     jum.total =this.formAdd.controls['total'].value
+    this.kirimData = jum;
+    jum.amount = jum.qty * jum.harga;
 
-      jum.qty * jum.harga;
+    console.log(jum.amount)
 
   }
 
