@@ -1,0 +1,30 @@
+<p><b><u>Input Data Barang</u> </b></p>
+
+
+<form [formGroup]="formAdd"  class="row g-3">
+
+  <div class="col-md-3">
+    <b>
+    <label for="sku" class="form-label">SKU</label>
+    </b>
+    <input type="number" class="form-control" id="sku" formControlName="sku">
+  </div>
+  <div class="col-md-3">
+    <b>
+    <label for="qty" class="form-label">QTY</label>
+    </b>
+    <input type="qty" class="form-control" id="qty" formControlName="qty">
+  </div>
+  <div class="col-md-4">
+    <b>
+    <label for="price" class="form-label">Price</label>
+    </b>
+    <input type="price" class="form-control" id="price" formControlName="price">
+  </div>
+  <div class="col-md-2">
+    <button type="submit" (click)="simpan()" class="btn btn-primary">Simpan</button>
+  </div>
+</form>
+<p></p>
+<app-barangchild [pesan]="kirimData" (toParent)="terimaPesa($event)"></app-barangchild>
+
