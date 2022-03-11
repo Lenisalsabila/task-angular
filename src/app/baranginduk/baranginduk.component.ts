@@ -26,8 +26,8 @@ export class BarangindukComponent implements OnInit {
     data.sku =this.formAdd.controls['sku'].value
     data.qty =this.formAdd.controls['qty'].value
     data.harga =this.formAdd.controls['harga'].value
-    data.amount =this.formAdd.controls['amount'].value
-    data.total =this.formAdd.controls['total'].value
+    //data.amount =this.formAdd.controls['amount'].value
+    //data.total =this.formAdd.controls['total'].value
     data.amount = data.qty * data.harga;
     this.kirimData = data;
   }
@@ -38,7 +38,7 @@ export class BarangindukComponent implements OnInit {
     this.formAdd.controls['qty'].setValue($event.qty)
     this.formAdd.controls['harga'].setValue($event.harga)
     this.formAdd.controls['amount'].setValue($event.amount)
-    this.formAdd.controls['total'].setValue($event.total)
+   // this.formAdd.controls['total'].setValue($event.total)
   }
 
 }

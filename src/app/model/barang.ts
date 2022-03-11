@@ -1,5 +1,5 @@
 export class Barang{
-  sku!: number;
+  sku!: string;
   qty!: number;
   harga!: number;
   amount!: number;

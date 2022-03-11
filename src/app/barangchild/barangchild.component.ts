@@ -12,6 +12,7 @@ export class BarangchildComponent implements OnInit {
   @Output() toParent = new EventEmitter<Barang>()
   @Input() pesan!: Barang;
   list!:Barang[]
+  total:number=0
 
   constructor(private formBuild: FormBuilder) { }
 
@@ -19,13 +20,18 @@ export class BarangchildComponent implements OnInit {
   }
   edit(idx: number): void{
     this.toParent.emit(this.list[idx])
+
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if(this.list){
+  ngOnChanges(changes: SimpleChanges){
+    if(this.list) {
       this.list.push(this.pesan)
-    }else{
-      if(this.pesan){
+      for (let i = 0; i < this.list.length; i++) {
+        this.total += this.list[i].amount
+        console.log(this.total)
+      }
+        }else{
+        if(this.pesan){
         this.list = [this.pesan]
       }
     }
