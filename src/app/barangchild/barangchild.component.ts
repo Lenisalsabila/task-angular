@@ -17,8 +17,8 @@ export class BarangchildComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  edit(sku: number): void{
-    this.toParent.emit(this.list[sku])
+  edit(idx: number): void{
+    this.toParent.emit(this.list[idx])
   }
 
   ngOnChanges(changes: SimpleChanges) {
